@@ -1,0 +1,7 @@
+.bi{
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+.bi:hover{
+    color: #999999;
+}
