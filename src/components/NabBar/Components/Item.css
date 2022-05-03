@@ -1,0 +1,21 @@
+a{
+    text-decoration: none;
+    color: white;
+    margin: 0 0.5rem;
+}
+a:hover{
+    color: gray;
+}
+
+.item{
+    text-transform: capitalize;
+}
+
+.item-link{
+    color: #fff;
+    text-decoration: none;
+    
+}
+.item-link:hover{
+    color: #999999;
+}
