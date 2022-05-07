@@ -1,0 +1,26 @@
+.count{
+    display: flex;
+    flex-direction: row;
+    border: solid black 1px;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+}
+
+.btn-count{
+    width: 50px;
+    height: 30px;
+    background-color: black;
+    color: white;
+
+}
+
+ .btn-count:hover{
+    border: solid white 1px;
+
+} 
+.btn-count:active{
+    background-color: white;
+    color: black;
+
+}
