@@ -1,0 +1,45 @@
+.card-item {
+    display: flex;
+    flex-direction: row;
+    width: 450px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16),
+        0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.photo {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.photo img {
+    max-height: 230px;
+}
+
+.description {
+    font-family: 'Roboto', sans-serif;
+    padding:10px 30px ;
+    width: 55%;
+    border-left: 2px solid #efefef;
+    text-align: center;
+}
+.description h3 {
+    text-transform: capitalize;
+    font-weight: 600;
+}
+.description button {
+    background-color: black;
+    color: white;
+    border: solid white 1px;
+    padding: 4px 0px;
+    text-transform: uppercase;
+    width: 125px;
+    margin-right: 5px;
+}
+
+.description button:hover {
+    border: solid black 1px;
+    background-color: white;
+    color:black;
+    cursor: pointer;
+}
