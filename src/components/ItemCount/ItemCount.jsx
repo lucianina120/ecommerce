@@ -2,7 +2,7 @@ import "./ItemCount.css"
 import { useState } from "react"
 
 function ItemCount({ stock, initial, onAdd }){
-
+  console.log(initial)
     const [count, setCount]  = useState(initial)
 
     function contadorSuma() {

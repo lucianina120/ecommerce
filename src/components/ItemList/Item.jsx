@@ -10,7 +10,7 @@ function Item({ item }) {
             <div className="description">
                 <h3>{title}</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Descripcion: Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                 </p>
                 <h3>${price}</h3>
                 <button>Detalles</button>

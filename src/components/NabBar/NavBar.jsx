@@ -6,15 +6,15 @@ import CartWidget from "./Components/CartWidget";
 function Navbar() {
     return (
         <header>
-            <div className="logo">ComidaRapida</div>
+            <div className="brand">TiendaRopa</div>
             <div className="collapse-menu">{/*Usar a futuro*/}
                 <ul className="navbar-menu">
                     <Item name={"inicio"} />
                     <Item name={"promociones"} />
-                    <Item name={"menu"} />
-                    <Item name={"postres"} />
-                    <Item name={"bebidas"} />
-                    <Item name={"contacto"} />
+                    <Item name={"blusas"} />
+                    <Item name={"buzos"} />
+                    <Item name={"pantalones"} />
+                    <Item name={"accesorios"} />
                 </ul>
             </div>
             <CartWidget />
