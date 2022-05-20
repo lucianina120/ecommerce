@@ -1,8 +1,7 @@
 // import ItemCount from "./ItemList/ItemList";
 import { useEffect, useState } from "react";
-import { getFetch } from "../../helpers/getFetch";
-import ItemList from "../ItemList/ItemList";
-import ItemCount from "../ItemCount/ItemCount";
+import { getFetch } from "../helpers/getFetch";
+import ItemList from "../components/ItemList/ItemList";
 
 function ItemListContainer({ greeting }) {
     const [products, setProducts] = useState([]);
@@ -19,12 +18,7 @@ function ItemListContainer({ greeting }) {
         <div>
             <h1 className="m-4">{greeting}</h1>
             <div className="list">
-                {loading ? (
-                    <h1>Cargando...</h1>
-                ) : (
-                    <ItemList items={products} />
-                )}
-
+                {loading ? <h1>Cargando...</h1> : <ItemList items={products} />}
             </div>
         </div>
     );

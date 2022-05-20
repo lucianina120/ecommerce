@@ -1,4 +1,4 @@
-const productos = [
+const products = [
     {
         id: 1,
         title: "blusa cobain",
@@ -52,14 +52,14 @@ const productos = [
 ];
 // export const getFetch = new Promise((resolve) => {
 //     setTimeout(() => {
-//         resolve(productos);
+//         resolve(products);
 //     }, 2000);
 // });
 
 export const getFetch = (id) => {
     return new Promise((resolve) => {
         setTimeout(() => {
-            const query = id ? productos.find((producto) => producto.id === id) : productos
+            const query = id ? products.find((producto) => producto.id === id) : products
             resolve(query)
         }, 2000)
     })

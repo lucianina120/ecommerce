@@ -1,20 +1,19 @@
+import { Link } from "react-router-dom";
 import Item from "./Components/Item";
-import "./Components/Item";
-import "./NavBar.css";
 import CartWidget from "./Components/CartWidget";
+import "./NavBar.css";
 
 function Navbar() {
     return (
         <header>
-            <div className="brand">TiendaRopa</div>
-            <div className="collapse-menu">{/*Usar a futuro*/}
+            <Link to="/">
+                <div className="brand">TiendaRopa</div>
+            </Link>
+            <div className="collapse-menu">
                 <ul className="navbar-menu">
                     <Item name={"inicio"} />
-                    <Item name={"promociones"} />
+                    <Item name={"remeras"} />
                     <Item name={"blusas"} />
-                    <Item name={"buzos"} />
-                    <Item name={"pantalones"} />
-                    <Item name={"accesorios"} />
                 </ul>
             </div>
             <CartWidget />
