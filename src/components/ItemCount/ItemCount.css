@@ -1,50 +1,30 @@
-.card-count{
-    width: 300px;
-    margin: 0 auto;
-}
 
-.count {
-    display: flex;
-    flex-direction: row;
-    border: solid black 1px;
-    justify-content: space-between;
-    align-items: center;
-    
+.count span{
+    padding: 0 10px;
 }
-
 .btn-count {
     /* width: 50px; */
-    padding: 0.2rem 1.5rem;
-    background-color: black;
+    padding: 0.2rem 1rem;
+    background-color: #ff523b;
     color: white;
-    border: solid black 1px;
 }
 
-.btn-count:hover {
-    border: solid white 1px;
-}
 .btn-count:active {
     background-color: white;
     color: black;
 }
 
+
 .btn-add {
-    padding: 0.2rem 1.5rem;
-    background-color: white;
-    border: solid black 1px;
-    width: 100%;
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    padding: 8px 25px;
+    margin: 20px 0 30px;
+    border-radius: 30px;
+    transition: background 0.5s;
 }
 
-.btn-add:hover {
-    background-color: black;
-    color:white;
+.btn-add:hover{
+    background: #563434;
 }
-.btn-add:active {
-    background-color: white;
-    color: black;
-}
-
-.fluid{
-    width: 100%;
-}
-

@@ -1,7 +1,6 @@
-.bi{
-    font-size: 2rem;
-    margin-left: 1rem;
+.cart .fa{
+    font-size: 3rem;
 }
-.bi:hover{
+.cart .fa:hover{
     color: #999999;
 }

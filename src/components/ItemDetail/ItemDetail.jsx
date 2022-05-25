@@ -1,21 +1,29 @@
-import ItemCount from "../ItemCount/ItemCount";
+import Exchange from "../Exchange/Exchange";
 import "./ItemDetail.css";
 
 const ItemDetail = ({ item }) => {
-    let { title, description, price, pictureUrl, stock } = item;
-
-    function onAdd(count) {
-        alert(`Se agregaron ${count} item al carrito`);
-    }
+    let { title, description, price, pictureUrl, category } = item;
 
     return (
-        <div className="card">
-            <img className="card-img-top" src={pictureUrl} alt="Card cap" />
-            <div className="card-body">
-                <h4 className="card-title">{title}</h4>
-                <p className="card-text">{description}</p>
-                <h5 className="card-title">${price}</h5>
-                <ItemCount stock={stock} initial={1} onAdd={onAdd} />
+        <div>
+            <div className="small-container single-product">
+                <div className="row">
+                    <div className="col-2">
+                        <img src={pictureUrl} id="productImg" alt="" />
+                    </div>
+                    <div className="col-2">
+                        <p>Inicio / {category}</p>
+                        <h1>{title}</h1>
+                        <h4>${price}</h4>
+                        <Exchange>{item}</Exchange>
+                        <h3>
+                            Detalles de producto
+                            <i className="fa fa-indent" aria-hidden="true"></i>
+                        </h3>
+                        <br />
+                        <p>{description}</p>
+                    </div>
+                </div>
             </div>
         </div>
     );

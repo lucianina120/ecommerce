@@ -1,26 +1,27 @@
 import "./ItemCount.css";
 import { useState } from "react";
 
-function ItemCount({ stock, initial, onAdd }) {
-    console.log(initial);
-    const [count, setCount] = useState(initial);
+function ItemCount( product, countModified ) {
+    const [count, setCount] = useState(1);
+
 
     function add() {
-        if (count < stock) {
+        if (count < product.stock) {
             setCount(count + 1);
         }
     }
 
     function reduce() {
-        if (count > 1) {
+        if (count > 1 && count <= product.stock) {
             setCount(count - 1);
         }
     }
 
-    function addToCart() {
-        onAdd(count);
+    function onAdd() {
+        alert(`Agregaste ${count} ${product.nombre}`);
+        countModified();
     }
-
+    console.log(product)
     return (
         <div className="card-count">
             <div className="count">
@@ -32,7 +33,7 @@ function ItemCount({ stock, initial, onAdd }) {
                     +
                 </button>
             </div>
-            <button className="btn-add fluid mt-1" onClick={addToCart}>
+            <button className="btn-add fluid mt-1" onClick={onAdd}>
                 Agregar al carrito
             </button>
         </div>

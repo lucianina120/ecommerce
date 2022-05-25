@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Item from "./Components/Item";
 import CartWidget from "./Components/CartWidget";
 import "./NavBar.css";
@@ -11,9 +11,15 @@ function Navbar() {
             </Link>
             <div className="collapse-menu">
                 <ul className="navbar-menu">
-                    <Item name={"inicio"} />
-                    <Item name={"remeras"} />
-                    <Item name={"blusas"} />
+                    <NavLink to="/">
+                        <Item name={"inicio"} />
+                    </NavLink>
+                    <NavLink to="/category/remeras">
+                        <Item name={"remeras"} />
+                    </NavLink>
+                    <NavLink to="/category/blusas">
+                        <Item name={"blusas"} />
+                    </NavLink>
                 </ul>
             </div>
             <CartWidget />

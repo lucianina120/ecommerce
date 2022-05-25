@@ -5,7 +5,8 @@ function CartWidget() {
     return (
         <Link to="/cart">
             <div className="cart">
-                <i className="bi bi-cart2"></i>
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+
             </div>
         </Link>
     );
