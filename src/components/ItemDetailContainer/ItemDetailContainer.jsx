@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { getFetch } from "../helpers/getFetch";
+import { getFetch } from "../../helpers/getFetch";
 import { useParams } from "react-router-dom";
 
-import ItemDetail from "../components/ItemDetail/ItemDetail";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
 import "./ItemDetailContainer.css";
 
@@ -15,17 +15,26 @@ const ItemDetailContainer = () => {
     useEffect(() => {
         getFetch(detailId)
             .then((response) => {
-                setItem(response)
-                console.log(`ItemF: ${item}`)
+                setItem(response); 
             })
             .catch((err) => console.error("err"))
             .finally(() => setLoading(false));
-        }, []);
+    }, []);
     return (
         <div className="content">
-            {loading ? <h1>Cargando...</h1> :<ItemDetail item={item} />}
+            {loading ? (
+                <div className="loader">
+                    <div className="dot"></div>
+                    <div className="dot"></div>
+                    <div className="dot"></div>
+                    <div className="dot"></div>
+                    <div className="dot"></div>
+                </div>
+            ) : (
+                <ItemDetail item={item} />
+            )}
         </div>
     );
-}
+};
 
 export default ItemDetailContainer;

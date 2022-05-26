@@ -1,7 +1,7 @@
 import "./ItemCount.css";
 import { useState } from "react";
 
-function ItemCount( product, countModified ) {
+function ItemCount( {product, countModified} ) {
     const [count, setCount] = useState(1);
 
 
@@ -18,10 +18,9 @@ function ItemCount( product, countModified ) {
     }
 
     function onAdd() {
-        alert(`Agregaste ${count} ${product.nombre}`);
+        alert(`Agregaste ${count} ${product.title}`);
         countModified();
     }
-    console.log(product)
     return (
         <div className="card-count">
             <div className="count">

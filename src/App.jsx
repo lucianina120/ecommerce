@@ -5,8 +5,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 //componentes importados
 import Navbar from "./components/NabBar/NavBar";
-import ItemListContainer from "./container/ItemListContainer";
-import ItemDetailContainer from "./container/ItemDetailContainer";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
 
 function App() {

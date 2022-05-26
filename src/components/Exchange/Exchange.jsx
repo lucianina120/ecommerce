@@ -2,8 +2,8 @@ import ItemCount from '../ItemCount/ItemCount';
 import InputCount from '../InputCount/InputCount';
 import { useState } from 'react';
 
-function Exchance(product) {
-    let products = product.children;
+const Exchance = ({item}) => {
+
     const [count, setCount] = useState(true);
     
     function countModified() {
@@ -14,7 +14,7 @@ function Exchance(product) {
         <>  
             {
                 count === true ?
-                    <ItemCount products={products} countModified={countModified}/>
+                    <ItemCount product={item} countModified={countModified}/>
                 :
                     <InputCount />
             }

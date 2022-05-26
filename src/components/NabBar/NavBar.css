@@ -11,7 +11,7 @@ header{
 
 .brand{
     font-weight:300;
-    font-size: 2rem;
+    font-size: 2.2rem;
 }
 .navbar-menu{
     margin: 0;
@@ -21,4 +21,17 @@ header{
 .login:hover{
     color:#999999;
     cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: white;
+    margin: 0 0.5rem;
+}
+a:hover{
+    color: gray;
+}
+
+.item{
+    text-transform: capitalize;
+    font-size: 1.6rem;
 }

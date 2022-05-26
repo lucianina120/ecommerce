@@ -4,11 +4,11 @@ function InputCount() {
     return (
         <>
             <Link to="/">
-                <button>Continuar comprando</button>
+                <button className='btn'>Continuar comprando</button>
             </Link>
 
             <Link to="/cart">
-                <button>Ir a carrito</button>
+                <button className='btn'>Ir a carrito</button>
             </Link>
         </>
     )

@@ -1,6 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import Item from "./Components/Item";
-import CartWidget from "./Components/CartWidget";
+import CartWidget from "../CartWidget/CartWidget";
 import "./NavBar.css";
 
 function Navbar() {
@@ -12,13 +11,16 @@ function Navbar() {
             <div className="collapse-menu">
                 <ul className="navbar-menu">
                     <NavLink to="/">
-                        <Item name={"inicio"} />
-                    </NavLink>
-                    <NavLink to="/category/remeras">
-                        <Item name={"remeras"} />
+                        <li className="item">{"inicio"}</li>
                     </NavLink>
                     <NavLink to="/category/blusas">
-                        <Item name={"blusas"} />
+                    <li className="item">{"Blusas"}</li>
+                    </NavLink>
+                    <NavLink to="/category/abrigos">
+                        <li className="item">{"abrigos"}</li>
+                    </NavLink>
+                    <NavLink to="/category/pantalones">
+                    <li className="item">{"pantalones"}</li>
                     </NavLink>
                 </ul>
             </div>

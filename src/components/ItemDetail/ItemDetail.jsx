@@ -15,7 +15,7 @@ const ItemDetail = ({ item }) => {
                         <p>Inicio / {category}</p>
                         <h1>{title}</h1>
                         <h4>${price}</h4>
-                        <Exchange>{item}</Exchange>
+                        <Exchange item={item}/>
                         <h3>
                             Detalles de producto
                             <i className="fa fa-indent" aria-hidden="true"></i>

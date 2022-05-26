@@ -1,7 +1,7 @@
 // import ItemCount from "./ItemList/ItemList";
 import { useEffect, useState } from "react";
-import { getFetch } from "../helpers/getFetch";
-import ItemList from "../components/ItemList/ItemList";
+import { getFetch } from "../../helpers/getFetch";
+import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import "./ItemListContainer.css";
 
@@ -10,7 +10,6 @@ function ItemListContainer({ greeting }) {
     const [loading, setLoading] = useState(true);
 
     const { categoryId } = useParams();
-    console.log(categoryId);
     useEffect(() => {
         setLoading(true);
         if (categoryId) {
