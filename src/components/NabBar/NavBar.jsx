@@ -4,7 +4,7 @@ import "./NavBar.css";
 
 function Navbar() {
     return (
-        <header>
+        <header className="navbar">
             <Link to="/">
                 <div className="brand">TiendaRopa</div>
             </Link>
@@ -14,13 +14,13 @@ function Navbar() {
                         <li className="item">{"inicio"}</li>
                     </NavLink>
                     <NavLink to="/category/blusas">
-                    <li className="item">{"Blusas"}</li>
+                        <li className="item">{"Blusas"}</li>
                     </NavLink>
                     <NavLink to="/category/abrigos">
                         <li className="item">{"abrigos"}</li>
                     </NavLink>
                     <NavLink to="/category/pantalones">
-                    <li className="item">{"pantalones"}</li>
+                        <li className="item">{"pantalones"}</li>
                     </NavLink>
                 </ul>
             </div>

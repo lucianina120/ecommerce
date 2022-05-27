@@ -190,6 +190,6 @@ export const getFetch = (id) => {
                 ? products.find((producto) => producto.id === id)
                 : products;
             resolve(query);
-        }, 2000);
+        }, 1000);
     });
 };

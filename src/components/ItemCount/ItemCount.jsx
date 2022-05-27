@@ -19,7 +19,6 @@ function ItemCount( {product, countModified} ) {
     }
 
     function onAdd() {
-        alert(`Agregaste ${count} ${product.title}`);
         addToCart({...product, quantity : count}) 
         countModified();
     }

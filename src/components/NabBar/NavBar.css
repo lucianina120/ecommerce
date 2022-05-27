@@ -22,12 +22,13 @@ header{
     color:#999999;
     cursor: pointer;
 }
-a{
+
+.navbar a{
     text-decoration: none;
     color: white;
     margin: 0 0.5rem;
 }
-a:hover{
+.navbar a:hover{
     color: gray;
 }
 

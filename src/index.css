@@ -16,7 +16,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+  font-size: 1.6rem;
 }
 
 code {
@@ -26,6 +26,9 @@ code {
 
 li{
   list-style: none;
+}
+a{
+  text-decoration: none;
 }
 
 button{
