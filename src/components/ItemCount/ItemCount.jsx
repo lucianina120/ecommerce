@@ -1,9 +1,10 @@
 import "./ItemCount.css";
-import { useState } from "react";
+import {  useState } from "react";
+import { useCartContext } from "../../context/CartContext";
 
 function ItemCount( {product, countModified} ) {
     const [count, setCount] = useState(1);
-
+    const { addToCart } = useCartContext()
 
     function add() {
         if (count < product.stock) {
@@ -19,6 +20,7 @@ function ItemCount( {product, countModified} ) {
 
     function onAdd() {
         alert(`Agregaste ${count} ${product.title}`);
+        addToCart({...product, quantity : count}) 
         countModified();
     }
     return (
