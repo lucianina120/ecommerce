@@ -1,6 +1,9 @@
+.cart{
+    position: relative;
+}
 .cart .fa{
-    font-size: 3rem;
+    font-size: 2rem;
 }
 .cart .fa:hover{
-    color: #999999;
+    color: #b9b9b9;
 }

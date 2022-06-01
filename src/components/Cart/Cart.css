@@ -1,13 +1,9 @@
-.btn{
-    width: 100%;
-    background: #ff523b;
-    color: #fff;
-    padding: 8px 30px;
-    margin: 10px 0;
-    border-radius: 0 0 30px 30px;
-    cursor: pointer;
-}
 
+.btn{
+    color: #ff523b;
+    cursor: pointer;
+    background-color: #fff ;
+}
 .cart-page{
     margin:  80px auto;
 }
@@ -23,6 +19,9 @@ table{
 }
 .cart-info p{
     text-transform: capitalize;
+}
+.singleItem{
+    border-bottom: 1px solid rgb(226, 226, 226);
 }
 
 th{
@@ -47,6 +46,16 @@ td img{
     margin-right: 10px;
 }
 
+tfoot{
+    padding: 8px 30px;
+    margin: 10px 0;
+    border-radius: 0 0 10px 10px;
+}
+tfoot tr{
+    padding: 8px 30px;
+    margin: 10px 0;
+    border-radius: 0 0 10px 10px;
+}
 .total-price{
     display: flex;
     justify-content: flex-end;
