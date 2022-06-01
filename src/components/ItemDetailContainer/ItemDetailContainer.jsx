@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 
 import "./ItemDetailContainer.css";
+import Loader from "../Loader/Loader";
 
 const ItemDetailContainer = () => {
     const [item, setItem] = useState({});
@@ -23,13 +24,7 @@ const ItemDetailContainer = () => {
     return (
         <div className="content">
             {loading ? (
-                <div className="loader">
-                    <div className="dot"></div>
-                    <div className="dot"></div>
-                    <div className="dot"></div>
-                    <div className="dot"></div>
-                    <div className="dot"></div>
-                </div>
+                <Loader/>
             ) : (
                 <ItemDetail item={item} />
             )}

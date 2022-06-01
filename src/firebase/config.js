@@ -1,8 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import getFirestoreApp from './firebase/config'
-import App from './App';
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -16,7 +11,3 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-    <App />
-)
