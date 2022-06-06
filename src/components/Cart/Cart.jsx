@@ -1,12 +1,11 @@
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import { useState } from "react";
+import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import "./Cart.css";
 
 function Cart() {
-    const { cartList, clear, total,subtotalItem, remove } = useCartContext();
-    const [emptyCart, setEmptyCart] = useState(false);
-
+    const { cartList, clear, total,subtotalItem,removeItem } = useCartContext();
+    
 
     const generarOrden = () => {
         let orden = {};
@@ -31,11 +30,16 @@ function Cart() {
             .finally(clear());
     };
 
+    if( total() === 0){
+        return(
+            <div className="empty-container">
+                <h2>El carrito esta vacio</h2>
+                <p> ¿Deseas seguir comprando? <Link to="/"><span>Volver al inicio</span></Link></p>
+            </div>
+        )
+    }
+
     return (
-        <>
-            {emptyCart ? (
-                <h2>Carito vacio</h2>
-            ) : (
                 <div className="small-container cart-page">
                     <table>
                         <thead>
@@ -63,7 +67,7 @@ function Cart() {
                                                 <button
                                                     className="btn"
                                                     onClick={() =>
-                                                        remove(
+                                                        removeItem(
                                                             cartItem.id
                                                         )
                                                     }
@@ -117,8 +121,6 @@ function Cart() {
                         </table>
                     </div>
                 </div>
-            )}
-        </>
     );
 }
 

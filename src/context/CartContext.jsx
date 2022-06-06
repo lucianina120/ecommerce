@@ -9,24 +9,24 @@ const CartContextProvider = ({ children }) => {
     const [cartList, setCartList] = useState([]);
 
     function addToCart(item) {
-        // const index = cartList.findIntex(product => product.id === item.id)
-        // if (index !== -1){
-        //     const oldQuantity = cartList[index].quantity
-        //     cartList[index].quantity += oldQuantity
-        //     setCartList([...cartList]);
-        // }else{
-            setCartList([...cartList, item]);
-        // }
+        const index = cartList.findIndex(product => product.id === item.id)
+        if (index !== -1){
+            const newQuantity = item.quantity
+            cartList[index].quantity += newQuantity
+            setCartList([...cartList]);
+        }else{
+            setCartList([...cartList, item]); 
+        }
     }
 
-    // const removeItem = (itemId) =>{
-    //     setCartList([...cartList, item])
-    // }
+    const removeItem = (id) =>{
+        setCartList(cartList.filter( prod => prod.id !== id))
+    }
     const subtotalItem = (price, qty) => {
         return price * qty;
     };
 
-    const total = () => {
+    const total = () => { 
         return cartList.reduce((acc, cur) => acc + cur.quantity * cur.price, 0);
     };
 
@@ -37,7 +37,7 @@ const CartContextProvider = ({ children }) => {
         setCartList([]);
     };
     return (
-        <CartContext.Provider value={{ cartList, addToCart, totalItem, clear, total,subtotalItem}}>
+        <CartContext.Provider value={{ cartList, addToCart, totalItem, clear, total,subtotalItem, removeItem}}>
             {children}
         </CartContext.Provider>
     );
