@@ -4,8 +4,8 @@ import { useCartContext } from "../../context/CartContext";
 import "./Cart.css";
 
 function Cart() {
-    const { cartList, clear, total,subtotalItem,removeItem } = useCartContext();
-    
+    const { cartList, clear, total, subtotalItem, removeItem } =
+        useCartContext();
 
     const generarOrden = () => {
         let orden = {};
@@ -30,97 +30,130 @@ function Cart() {
             .finally(clear());
     };
 
-    if( total() === 0){
-        return(
+    if (total() === 0) {
+        return (
             <div className="empty-container">
                 <h2>El carrito esta vacio</h2>
-                <p> ¿Deseas seguir comprando? <Link to="/"><span>Volver al inicio</span></Link></p>
+                <p>
+                    {" "}
+                    ¿Deseas seguir comprando?{" "}
+                    <Link to="/">
+                        <span>Volver al inicio</span>
+                    </Link>
+                </p>
             </div>
-        )
+        );
     }
 
     return (
-                <div className="small-container cart-page">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Producto</th>
-                                <th>Cantidad</th>
-                                <th>Subtotal</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {cartList.map((cartItem) => (
-                                <tr key={cartItem.id} className="singleItem">
-                                    <td>
-                                        <div className="cart-info">
-                                            <img
-                                                src={cartItem.pictureUrl}
-                                                alt=""
-                                            />
-                                            <div>
-                                                <p>{cartItem.title}</p>
-                                                <small>
-                                                    Price: $ {cartItem.price}
-                                                </small>
-                                                <br />
-                                                <button
-                                                    className="btn"
-                                                    onClick={() =>
-                                                        removeItem(
-                                                            cartItem.id
-                                                        )
-                                                    }
-                                                >
-                                                    Eliminar
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>{cartItem.quantity}</td>
-                                    <td>
-                                        ${" "}
-                                        {subtotalItem(
-                                            cartItem.price,
-                                            cartItem.quantity
-                                        )}
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
-                        <tfoot>
-                            <tr>
-                                <td colSpan={3}>
-                                    <button
-                                        className="btn"
-                                        onClick={() => clear()}
-                                    >
-                                        <i
-                                            className="fa fa-trash-o"
-                                            aria-hidden="true"
-                                        ></i>{" "}
-                                        Vaciar el carrito
-                                    </button>
-                                </td>
-                            </tr>
-                        </tfoot>
-                    </table>
-                    <div className="total-price">
-                        <table>
-                            <tr>
-                                <td>Total</td>
-                                <td>$ {total()}</td>
-                                <button
-                                    onClick={() => generarOrden()}
-                                    className="btn"
-                                >
-                                    {" "}
-                                    Realizar compra
-                                </button>
-                            </tr>
-                        </table>
+        <div className="small-container cart-page">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Subtotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {cartList.map((cartItem) => (
+                        <tr key={cartItem.id} className="singleItem">
+                            <td>
+                                <div className="cart-info">
+                                    <img src={cartItem.pictureUrl} alt="" />
+                                    <div>
+                                        <p>{cartItem.title}</p>
+                                        <small>Price: $ {cartItem.price}</small>
+                                        <br />
+                                        <button
+                                            className="btn"
+                                            onClick={() =>
+                                                removeItem(cartItem.id)
+                                            }
+                                        >
+                                            Eliminar
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>{cartItem.quantity}</td>
+                            <td>
+                                ${" "}
+                                {subtotalItem(
+                                    cartItem.price,
+                                    cartItem.quantity
+                                )}
+                            </td>
+                        </tr>
+                    ))}
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colSpan={3}>
+                            <button className="btn" onClick={() => clear()}>
+                                <i
+                                    className="fa fa-trash-o"
+                                    aria-hidden="true"
+                                ></i>{" "}
+                                Vaciar el carrito
+                            </button>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div className="total-price">
+                <table>
+                    <tr>
+                        <td>Total</td>
+                        <td>$ {total()}</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="form-container">
+                <h1>Datos del comprador</h1>
+                <div className="underline"></div>
+                <form action="#" method="post" id="contact_form">
+                    <div className="name">
+                        <label for="name"></label>
+                        <input
+                            type="text"
+                            placeholder="Mi nombre es"
+                            name="name"
+                            id="name_input"
+                            required
+                        />
                     </div>
-                </div>
+                    <div className="email">
+                        <label for="email"></label>
+                        <input
+                            type="email"
+                            placeholder="Mi e-mail es"
+                            name="email"
+                            id="email_input"
+                            required
+                        />
+                    </div>
+                    <div className="telephone">
+                        <label for="name"></label>
+                        <input
+                            type="text"
+                            placeholder="Mi telefono es"
+                            name="telephone"
+                            id="telephone_input"
+                            required
+                        />
+                    </div>
+                    <div className="submit">
+                        <input
+                            type="submit"
+                            onClick={() => generarOrden()}
+                            value="Realizar compra"
+                            id="form_button"
+                        />
+                    </div>
+                </form>
+            </div>
+        </div>
     );
 }
 

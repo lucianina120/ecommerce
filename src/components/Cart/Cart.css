@@ -1,30 +1,29 @@
-
-.btn{
+.btn {
     color: #ff523b;
     cursor: pointer;
-    background-color: #fff ;
+    background-color: #fff;
 }
-.cart-page{
-    margin:  80px auto;
+.cart-page {
+    margin: 80px auto;
 }
 
-table{
+table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.cart-info{
+.cart-info {
     display: flex;
     flex-wrap: wrap;
 }
-.cart-info p{
+.cart-info p {
     text-transform: capitalize;
 }
-.singleItem{
+.singleItem {
     border-bottom: 1px solid rgb(226, 226, 226);
 }
 
-th{
+th {
     padding: 5px;
     text-align: left;
     background-color: #ff523b;
@@ -32,43 +31,108 @@ th{
     font-weight: normal;
 }
 
-td{
+td {
     padding: 10px 5px;
 }
 
-td a{
+td a {
     color: #ff523b;
     font-size: 1.2rem;
 }
-td img{
+td img {
     width: 80px;
     height: 80px;
     margin-right: 10px;
 }
 
-tfoot{
+tfoot {
     padding: 8px 30px;
     margin: 10px 0;
     border-radius: 0 0 10px 10px;
 }
-tfoot tr{
+tfoot tr {
     padding: 8px 30px;
     margin: 10px 0;
     border-radius: 0 0 10px 10px;
 }
-.total-price{
+.total-price {
     display: flex;
     justify-content: flex-end;
 }
-.total-price table{
-    border-top:  3px solid #ff523b;
+.total-price table {
+    border-top: 3px solid #ff523b;
     width: 100%;
     max-width: 370px;
 }
 
-td:last-child{
+td:last-child {
     text-align: right;
 }
-th:last-child{
+th:last-child {
     text-align: right;
+}
+
+/* Form  */
+
+#form-container {
+    max-width: 768px;
+    margin: 60px auto;
+    position: relative;
+}
+
+form {
+    margin: 30px 0;
+}
+
+h1 {
+    background-color: #ff523b;
+    padding: 5px;
+    color: #fff;
+    font-weight: normal;
+    font-size: 1.6rem;
+}
+
+input[type="text"],
+[type="email"] {
+    background: none;
+    border: none;
+    border-bottom: solid 2px #ff523b;
+    color: #ff523b;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin: 0em 0 1.875em 0;
+    padding: 0 0 0.875em 0;
+    width: 100%;
+}
+
+input[type="text"]:focus,
+[type="email"]:focus {
+    outline: none;
+    padding: 0 0 0.875em 0;
+}
+
+.telephone {
+    width: 100%;
+}
+
+.submit {
+    text-align: center;
+}
+#form_button {
+    background: none;
+    border: solid 2px #ff523b;
+    color: #ff523b;
+    cursor: pointer;
+    display: inline-block;
+    font-family: "Helvetica", Arial, sans-serif;
+    font-size: 0.875em;
+    font-weight: bold;
+    padding: 10px 35px;
+    text-transform: uppercase;
+}
+
+#form_button:hover {
+    background: #ff523b;
+    color: #f2f3eb;
 }
