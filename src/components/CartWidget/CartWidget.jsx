@@ -3,7 +3,6 @@ import "./CartWidget.css";
 import { useCartContext } from "../../context/CartContext";
 function CartWidget() {
     const { cartList } = useCartContext();
-    console.log(cartList);
     
     const totalItem = (products) => {
         return products.reduce( (acc, cur) => acc + cur.quantity,0 );

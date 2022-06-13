@@ -1,33 +1,49 @@
-import { addDoc, collection, getFirestore } from "firebase/firestore";
+import {
+    addDoc,
+    collection,
+    getFirestore,
+} from "firebase/firestore";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 import "./Cart.css";
 
 function Cart() {
+    const [data, setData] = useState({
+        name: "",
+        email: "",
+        phone: "",
+    });
     const { cartList, clear, total, subtotalItem, removeItem } =
         useCartContext();
 
+    function handleInputChange(event) {
+        setData({
+            ...data,
+            [event.target.name]: event.target.value,
+        });
+    }
+
     const generarOrden = () => {
+        const db = getFirestore();
+        const queryCollection = collection(db, "orders");
+
         let orden = {};
 
-        orden.buyer = {
-            name: "Lucia",
-            phone: "2804456456",
-            email: "lu@mail.com",
-        };
-
+        orden.buyer = data;
+        orden.date = new Date();
         orden.total = total(cartList);
         orden.items = cartList.map((cartItem) => {
             const id = cartItem.id;
             const name = cartItem.title;
-            const price = cartItem.price;
+            const price = cartItem.price * cartItem.quantity;
             return { id, name, price };
         });
-        const db = getFirestore();
-        const queryCollection = collection(db, "orders");
+
         addDoc(queryCollection, orden)
-            .then((resp) => console.log(resp))
+            .then((resp) => alert(`El id de su compra es ${resp.id} `))
             .finally(clear());
+        
     };
 
     if (total() === 0) {
@@ -120,6 +136,7 @@ function Cart() {
                             placeholder="Mi nombre es"
                             name="name"
                             id="name_input"
+                            onChange={handleInputChange}
                             required
                         />
                     </div>
@@ -130,16 +147,18 @@ function Cart() {
                             placeholder="Mi e-mail es"
                             name="email"
                             id="email_input"
+                            onChange={handleInputChange}
                             required
                         />
                     </div>
-                    <div className="telephone">
+                    <div className="phone">
                         <label for="name"></label>
                         <input
                             type="text"
                             placeholder="Mi telefono es"
-                            name="telephone"
-                            id="telephone_input"
+                            name="phone"
+                            id="phone_input"
+                            onChange={handleInputChange}
                             required
                         />
                     </div>

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { getFetch } from "../../helpers/getFetch";
 import { useParams } from "react-router-dom";
 
 import ItemDetail from "../ItemDetail/ItemDetail";
@@ -23,14 +22,6 @@ const ItemDetailContainer = () => {
             .finally(() => setLoading(false));
     }, [detailId]);
 
-    // useEffect(() => {
-    //     getFetch(detailId)
-    //         .then((response) => {
-    //             setItem(response);
-    //         })
-    //         .catch((err) => console.error("err"))
-    //         .finally(() => setLoading(false));
-    // }, []);
     return (
         <div className="content">
             {loading ? <Loader /> : <ItemDetail item={item} />}

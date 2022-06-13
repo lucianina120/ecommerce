@@ -80,11 +80,11 @@ th:last-child {
     position: relative;
 }
 
-form {
+#form-container form {
     margin: 30px 0;
 }
 
-h1 {
+#form-container h1 {
     background-color: #ff523b;
     padding: 5px;
     color: #fff;
@@ -112,7 +112,7 @@ input[type="text"]:focus,
     padding: 0 0 0.875em 0;
 }
 
-.telephone {
+.phone {
     width: 100%;
 }
 
