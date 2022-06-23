@@ -1,21 +1,15 @@
-//estilo
-import "./App.css";
-
-//librerias importadas
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
-//componentes importados
 import Navbar from "./components/NabBar/NavBar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
 
-//contextos
 import CartContextProvider from "./context/CartContext";
 
-function App() {
-    let welcome = "Bienvenidx a mi tiendita <3";
+import "./App.css";
 
+function App() {
     return (
         <BrowserRouter>
         <CartContextProvider>
@@ -24,11 +18,11 @@ function App() {
                 <Routes>
                     <Route
                         path="/"
-                        element={<ItemListContainer greeting={welcome} />}
+                        element={<ItemListContainer/>}
                     />
                     <Route
                         path="/category/:categoryId"
-                        element={<ItemListContainer greeting={welcome} />}
+                        element={<ItemListContainer />}
                     />
                     <Route
                         path="/detail/:detailId"

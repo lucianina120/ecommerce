@@ -1,8 +1,9 @@
 import Exchange from "../Exchange/Exchange";
+
 import "./ItemDetail.css";
 
-const ItemDetail = ({ item }) => {
-    let { title, description, price, pictureUrl, category } = item;
+const ItemDetail = ({ product }) => {
+    let { title, description, price, pictureUrl, category } = product;
 
     return (
         <div>
@@ -15,7 +16,7 @@ const ItemDetail = ({ item }) => {
                         <p>Inicio / {category}</p>
                         <h1>{title}</h1>
                         <h4>${price}</h4>
-                        <Exchange item={item}/>
+                        <Exchange product={product} />
                         <h3>
                             Detalles de producto
                             <i className="fa fa-indent" aria-hidden="true"></i>

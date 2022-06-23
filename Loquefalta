@@ -1,0 +1,7 @@
+Utiliza NavLinks para ubicar al usuario y les da un styling que valide que ya está en una ruta
+No lleva cosas de UI al context LISTO
+No genera subestados para guardar totalizaciones o counts / summary
+No hay lógicas de cálculo de cantidades dentro del widget LISTO
+Valida correctamente los inputs y sus tipos de datos 
+No utiliza recursos como alert o nativos del browser manteniendo el feedback en el componente
+Después de realizar la compra deja el cart y otros componentes en un estado consistente

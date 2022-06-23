@@ -1,8 +1,8 @@
-header{
+.navbar{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 900px;
     height: 70px;
     background-color: #000;
     color: white;
@@ -31,7 +31,9 @@ header{
 .navbar a:hover{
     color: gray;
 }
-
+.navbar-menu a:focus{
+    border-bottom: white 2px solid;
+}
 .item{
     text-transform: capitalize;
     font-size: 1.6rem;

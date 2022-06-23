@@ -1,25 +1,24 @@
-import ItemCount from '../ItemCount/ItemCount';
-import InputCount from '../InputCount/InputCount';
-import { useState } from 'react';
+import ItemCount from "../ItemCount/ItemCount";
+import { useState } from "react";
 
-const Exchance = ({item}) => {
+import InputCount from "../InputCount/InputCount";
 
+const Exchance = ({ product }) => {
     const [count, setCount] = useState(true);
-    
+
     function countModified() {
-        setCount(false)
+        setCount(false);
     }
 
-    return(
-        <>  
-            {
-                count === true ?
-                    <ItemCount product={item} countModified={countModified}/>
-                :
-                    <InputCount />
-            }
+    return (
+        <>
+            {count === true ? (
+                <ItemCount product={product} countModified={countModified} />
+            ) : (
+                <InputCount />
+            )}
         </>
-    )
-}
+    );
+};
 
-export default Exchance
+export default Exchance;

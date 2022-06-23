@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+
 import "./Item.css";
 
-function Item({ item }) {
-    let { id, title, price, pictureUrl } = item;
+function Item({ product }) {
+    let { id, title, price, pictureUrl } = product;
     return (
         <div className="card">
             <div className="card-img">

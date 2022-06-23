@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .single-product{
@@ -22,7 +22,7 @@
 .col-2 img{
     width: 100%;
     max-width:100%;
-    padding:50px 0;
+    padding:40px 0;
 
 }
 .small-img-col{
